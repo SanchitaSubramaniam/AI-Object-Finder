@@ -28,7 +28,7 @@ function draw() {
         objectDetector.detect(video, gotResult);
         for (i = 0; i < objects.length; i++) {
             document.getElementById("status").innerHTML = "Status: Objects Detected";
-            document.getElementById("number_of_object").innerHTML = "Number of objects detected are: " + objects.length;
+            document.getElementById("number_of_objects").innerHTML = "Number of objects detected are: " + objects.length;
 
             fill('#FF0000');
             percent = floor(objects[i].confidence * 100);
@@ -37,11 +37,6 @@ function draw() {
             stroke('#FF0000');
             rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
 
-        }
-        if (objects[i].label == object_name) {
-            video.stop();
-            objectDetector.detect(gotResult);
-            document.getElementById("status").innerHTML = objects + "Found";
         }
     }
 }
