@@ -41,7 +41,7 @@ function draw() {
         if (objects[i].label == object_name) {
             video.stop();
             objectDetector.detect(gotResult);
-            document.getElementById("status").innerHTML = text + "Found";
+            document.getElementById("status").innerHTML = objects + "Found";
         }
     }
 }
