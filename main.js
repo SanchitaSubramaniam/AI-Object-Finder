@@ -1,6 +1,6 @@
 objects = [];
 status = "";
-video = "";
+value = "";
 
 function setup() {
     canvas = createCanvas(480, 380);
@@ -27,8 +27,7 @@ function draw() {
     {
         objectDetector.detect(video, gotResult);
         for (i = 0; i < objects.length; i++) {
-            document.getElementById("status").innerHTML = "Status: Objects Detected";
-            document.getElementById("number_of_objects").innerHTML = "Number of objects detected are: " + objects.length;
+            document.getElementById("status").innerHTML = value + "Found";
 
             fill('#FF0000');
             percent = floor(objects[i].confidence * 100);
